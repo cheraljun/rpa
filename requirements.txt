@@ -1,0 +1,6 @@
+PyYAML
+pyperclip
+pyautogui
+opencv-python
+requests
+pygame

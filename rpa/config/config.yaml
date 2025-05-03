@@ -1,0 +1,113 @@
+# 指令类型说明：
+# mouse - 鼠标操作（悬停/点击）
+# scroll - 滚轮滚动操作
+# wait - 等待操作
+# input - 输入操作
+
+# 内容说明：
+# 对于鼠标操作，内容为 {action: 'hover/click', click_times: 点击次数, lOrR: 'left/right', img: 图片名, x: x坐标, y: y坐标}
+# 对于滚轮操作，内容为滚动的距离（正数向上，负数向下）
+# 对于等待操作，内容为等待的时长（秒）
+# 对于输入操作，内容为 {content: 要输入的字符串, use_api: 是否使用外部api}
+
+# 重复次数说明：
+# -1 代表一直重复
+# 正整数代表重复的次数
+
+# 不同操作场景的配置
+scenarios:
+  hit_mouse:
+    image_path: 'C:\\Users\\admin\\Desktop\\rpa\\rpa\\config\\mousepic'
+    commands:
+      - type: mouse
+        content: {action: 'click', click_times: 2, lOrR: 'left', img: '1.png'}
+        retry: -1
+  wechat:
+    image_path: 'C:\\Users\\admin\\Desktop\\rpa\\rpa\\config\\hellopic'
+    commands:
+      - type: mouse
+        content: {action: 'hover', click_times: 0, lOrR: 'left', img: 'robot.png'}
+        retry: -1
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'send_window.png'}
+        retry: -1
+      - type: input
+        content: {content: '<string>', use_api: true}
+        retry: 1
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'send.png'}
+        retry: -1
+  xhs:
+    image_path: 'C:\\Users\\admin\\Desktop\\rpa\\rpa\\config\\xhspic'
+    commands:
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'dianzan.png'} # 点赞
+        retry: -1
+      - type: wait
+        content: 1 # 等待
+        retry: -1
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'dianzan.png'} # 点赞
+        retry: -1
+      - type: wait
+        content: 1 # 等待
+        retry: -1
+      - type: scroll
+        content: -150 # 滚轮
+        retry: -1
+      - type: wait
+        content: 2 # 等待
+        retry: -1
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left'}  # 不提供 img、x 和 y 字段
+        retry: -1
+      - type: wait
+        content: 2 # 等待
+        retry: -1
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'guanzhu.png'} # 关注
+        retry: -1
+      - type: wait
+        content: 1 # 等待
+        retry: -1
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'pinglun.png'} # 点击评论"说点什么"
+        retry: -1
+      - type: wait
+        content: 1 # 等待
+        retry: -1
+      - type: input
+        content: {content: '<string>', use_api: true}
+        retry: 1
+      - type: wait
+        content: 1 # 等待
+        retry: -1
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'send.png'} # 发送
+        retry: -1
+      - type: wait
+        content: 2 # 等待
+        retry: -1
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'xhslogo.png'} # 回到主页
+        retry: -1
+      - type: wait
+        content: 2 # 等待
+        retry: -1
+      - type: mouse
+        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'shuaxin.png'} # 刷新
+        retry: -1
+      - type: wait
+        content: 6 # 等待
+        retry: -1
+
+
+
+
+
+
+
+
+
+
+
