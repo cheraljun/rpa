@@ -1,6 +1,6 @@
 git add rpa test-program readme.md requirements.txt
 
-git commit -m "优化小红书模拟人类操作的逻辑(5月3日第三次修订)"
+git commit -m "新增多个public_api"
 
 git remote add origin git@github.com:cheraljun/rpa.git
 
@@ -17,6 +17,8 @@ git push origin master
 # 重写指令类型(5月3日第二次修订，优化小红书rpa逻辑)
 
 # 优化小红书模拟人类操作的逻辑(5月3日第三次修订)
+
+# 新增多个public_api
 
 
 
