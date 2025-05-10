@@ -16,12 +16,6 @@
 
 # 不同操作场景的配置
 scenarios:
-  hit_mouse:
-    image_path: 'C:\\Users\\admin\\Desktop\\rpa\\rpa\\config\\mousepic'
-    commands:
-      - type: mouse
-        content: {action: 'click', click_times: 2, lOrR: 'left', img: '1.png'}
-        retry: -1
   wechat:
     image_path: 'C:\\Users\\admin\\Desktop\\rpa\\rpa\\config\\hellopic'
     commands:
@@ -38,10 +32,13 @@ scenarios:
         content: {action: 'click', click_times: 1, lOrR: 'left', img: 'send.png'}
         retry: -1
   xhs:
-    image_path: 'C:\\Users\\admin\\Desktop\\rpa\\rpa\\config\\xhspic'
+    image_path: 'C:\\Users\\admin\\Desktop\\jun\\rpa\\rpa\\config\\xhspic'
     commands:
       - type: mouse
         content: {action: 'click', click_times: 1, lOrR: 'left', img: 'dianzan.png'} # 点赞
+        retry: -1
+      - type: scroll
+        content: -1000 # 滚轮
         retry: -1
       - type: wait
         content: 1 # 等待
@@ -53,7 +50,7 @@ scenarios:
         content: 1 # 等待
         retry: -1
       - type: scroll
-        content: -150 # 滚轮
+        content: 150 # 滚轮
         retry: -1
       - type: wait
         content: 2 # 等待
@@ -94,11 +91,8 @@ scenarios:
       - type: wait
         content: 2 # 等待
         retry: -1
-      - type: mouse
-        content: {action: 'click', click_times: 1, lOrR: 'left', img: 'shuaxin.png'} # 刷新
-        retry: -1
-      - type: wait
-        content: 6 # 等待
+      - type: scroll
+        content: -1000 # 滚轮
         retry: -1
 
 

@@ -1,6 +1,6 @@
-git add rpa test-program readme.md requirements.txt
+git add rpa readme.md requirements.txt
 
-git commit -m "新增多个public_api"
+git commit -m "给我老婆重写小红书的自动评论截流方法"
 
 git remote add origin git@github.com:cheraljun/rpa.git
 

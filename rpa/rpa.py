@@ -5,9 +5,20 @@ import pyautogui
 import time
 import os
 import sys
-sys.path.append('C:\\Users\\admin\\Desktop\\rpa\\test-program\\apiserver\\talkapi')
-from public_api_function import getrandomtalk
-from my_api_function import getvocabulary
+import requests
+
+def loveword():
+    apiname = '情话api接口'
+    try:
+        print(f'正在调用{apiname}...')
+        result = requests.get(url='https://api.pearktrue.cn/api/jdyl/qinghua.php', timeout=30).text
+        if result:
+            print(f'{apiname}调用成功!\n{result}\n')
+            return result
+        return None
+    except Exception as e:
+        print(f'{apiname}出现错误, 错误信息: {e}')
+        return None
 
 # 定义版权信息全局变量 count
 count = 0
@@ -102,7 +113,7 @@ def input_operation(content, use_api=False):
     try:
         if use_api:
             # 这里调用外部api获取内容
-            input_content = f'''祝帖主天天开心事事顺心[棒R]刷评论的朋友同时检测一下你的英语水平吧![doge]美国当代英语语料库由10亿词的文本构成, 文本分为口语、小说、流行杂志、报纸以及学术期刊五大类型。现在检测开始：{getvocabulary()}这个单词你认识吗? 学好语料库最常用的20000词, 就不会再为词汇量而操心~想学好英语找我[doge]最后祝你在信息时代活的开心~'''  # 假设getanswer是外部api函数
+            input_content = f'''写bp找我[doge]{loveword()}~'''  # 假设getanswer是外部api函数
         else:
             input_content = content
         if input_content:
@@ -228,7 +239,7 @@ def mainWork(cmd_list, image_path):
 # 封装的 RPA 函数，调用该函数即可直接执行配置文件中的指令
 def rpa(selected_scenario):
     global count
-    file = r'C:\\Users\\admin\\Desktop\\rpa\\rpa\\config\\config.yaml'
+    file = r'C:\\Users\\admin\\Desktop\\jun\\rpa\\rpa\\config\\config.yaml'
     print(f"尝试打开配置文件: {file}")
 
     try:
@@ -259,9 +270,8 @@ if __name__ == "__main__":
     while True:
         scenario_input = input('''请选择操作场景:
 wechat
-hit_mouse
 xhs\n选择?''')
-        if scenario_input in ['wechat', 'hit_mouse', 'xhs']:
+        if scenario_input in ['wechat', 'xhs']:
             while True:
                 user_input = input("请输入执行次数（整数）或输入 'loop' 进行循环执行: ")
                 if user_input == 'loop':
@@ -283,4 +293,4 @@ xhs\n选择?''')
                     print("输入无效，请输入一个正整数或 'loop'。")
             break
         else:
-            print("输入的场景无效，请输入 'wechat' 或 'hit_mouse'。")
+            print("输入的场景无效，请输入 'wechat' 或 'xhs'。")
