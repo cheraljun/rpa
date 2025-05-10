@@ -1,6 +1,6 @@
 git add rpa readme.md requirements.txt
 
-git commit -m "给我老婆重写小红书的自动评论截流方法"
+git commit -m "给我老婆重写小红书的自动评论截流方法, 做事业, 终于迈出了和我老婆合作的第一步啊。。。而不是总搞些没用的东西了。"
 
 git remote add origin git@github.com:cheraljun/rpa.git
 

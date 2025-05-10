@@ -38,7 +38,7 @@ scenarios:
         content: {action: 'click', click_times: 1, lOrR: 'left', img: 'dianzan.png'} # 点赞
         retry: -1
       - type: scroll
-        content: -1000 # 滚轮
+        content: -600 # 滚轮
         retry: -1
       - type: wait
         content: 1 # 等待
@@ -92,7 +92,7 @@ scenarios:
         content: 2 # 等待
         retry: -1
       - type: scroll
-        content: -1000 # 滚轮
+        content: -300 # 滚轮
         retry: -1
 
 
