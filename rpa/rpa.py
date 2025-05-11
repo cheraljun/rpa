@@ -113,7 +113,7 @@ def input_operation(content, use_api=False):
     try:
         if use_api:
             # 这里调用外部api获取内容
-            input_content = f'''Hi，这里专业代写商业计划书（BP），个人代写不是机构，无中间价，有需要请私信[握手R]～{loveword()}~[doge]'''  # 假设getanswer是外部api函数
+            input_content = f'''Hi，这里专业代写商业计划书（BP），个人代写不是机构，无中间价，有需要请私信[握手R]～{loveword()}[doge]'''  # 假设getanswer是外部api函数
         else:
             input_content = content
         if input_content:
